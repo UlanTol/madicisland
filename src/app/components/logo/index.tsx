@@ -12,12 +12,14 @@ const LogoContainer = styled.div`
 `;
 
 const LogoText = styled.div`
-  ${tw`m-1 text-xl font-bold text-black md:text-2xl`};
+  ${tw`mt-6 text-xl font-bold text-black md:text-2xl`};
+
   ${({ color }: any) => (color === "white" ? tw`text-white` : tw`text-black`)}
 ` as any;
+
 const Image = styled.div`
   width: auto;
-  ${tw`h-6 md:h-9`};
+  ${tw`h-2 md:h-5`};
 
   img {
     width: auto;

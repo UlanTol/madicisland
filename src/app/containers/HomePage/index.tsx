@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import BookCard from "../../components/bookCard/bookCard";
-import Footer from "../../components/footer";
+import Footer from "../../components/footer/index";
 import { Mariner } from "../../components/marginer/marginer";
 import { Navbar } from "../../components/navbar";
 import AboutUs from "./aboutUs";

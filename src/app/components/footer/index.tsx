@@ -2,102 +2,147 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { Logo } from "../logo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
 const FooterContainer = styled.div`
-  min-height: 25em;
-  background-color: rgb(21 42 76);
-  ${tw`flex flex-row flex-wrap min-w-full pb-1 md:pt-12 pt-7`}
+  //min-height: 24em;
+  background-color: #1d2124;
+  ${tw`flex flex-col items-center justify-center min-w-full pt-10 md:pt-16`};
 `;
+
 const InnerContainer = styled.div`
-  ${tw`flex flex-wrap h-full min-w-full max-w-screen-2xl`}
+  ${tw`flex flex-wrap w-full h-full max-w-screen-2xl`};
 `;
+
+const BottomContainer = styled.div`
+  ${tw`flex justify-center w-full max-w-screen-2xl md:justify-start mt-7 md:mt-1`};
+`;
+
+const CopyrightText = styled.small`
+  font-size: 12px;
+  ${tw`text-gray-300 `}
+`;
+
 const AboutContainer = styled.div`
-  ${tw`flex flex-col mr-2 md:mr-10`}
+  ${tw`flex flex-col pl-10 pr-10 mr-2 md:mr-16 md:pl-3 md:pr-3`};
 `;
+
 const AboutText = styled.p`
-  ${tw`max-w-xs mt-8 text-sm font-normal leading-5 text-white `}
+  ${tw`max-w-xs mt-2 text-sm font-normal leading-5 text-white `};
 `;
+
 const SectionContainer = styled.div`
-  ${tw`flex flex-col mb-3 mr-3 md:mr-16 `}
+  ${tw`flex flex-col w-full pl-10 pr-10 mr-2 md:w-auto md:mr-16 md:pl-3 md:pr-3 mt-7 md:mt-0`};
 `;
+
 const LinksList = styled.ul`
-  ${tw`flex flex-col list-none outline-none `}
+  ${tw`flex flex-col list-none outline-none `};
 `;
+
 const ListItem = styled.li`
-  ${tw`mb-3 text-sm text-white`};
+  ${tw`mb-3 `};
 
   & > a {
-    ${tw`text-sm text-white`}
+    ${tw`text-sm text-white transition-all hover:text-gray-200`};
   }
 `;
+
 const HeaderTitle = styled.h3`
-  ${tw`mb-3 text-2xl font-bold text-white `}
+  ${tw`mb-3 text-2xl font-bold text-white `};
 `;
-const Footer = () => {
+
+const HorizontalContainer = styled.div`
+  ${tw`flex items-center `};
+`;
+
+const RedIcon = styled.span`
+  ${tw`flex items-center justify-center mr-2 text-base text-white bg-red-500 rounded-full w-9 h-9`};
+`;
+
+const SmallText = styled.h6`
+  ${tw`text-sm text-white `};
+`;
+
+function Footer() {
   return (
     <FooterContainer>
       <InnerContainer>
         <AboutContainer>
-          <Logo color="white" />
+          <Logo color="white" bgColor="dark" />
           <AboutText>
-            MagicIsland is a Car renting and selling company in North Cyprus
-            which has high quality cars and top rated service
+            Yourcar is a Car renting and selling company located in many
+            countries across the world which has high quality cars and top rated
+            service.
           </AboutText>
         </AboutContainer>
         <SectionContainer>
           <HeaderTitle>Our Links</HeaderTitle>
           <LinksList>
             <ListItem>
-              <a href="#" />
-              Home
+              <a href="#">Home</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              About Us
+              <a href="#">About Us</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              Services
+              <a href="#">Services</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              Models
+              <a href="#">Models</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              Blog
+              <a href="#">Blog</a>
             </ListItem>
           </LinksList>
         </SectionContainer>
-
         <SectionContainer>
-          <HeaderTitle>Our Links</HeaderTitle>
+          <HeaderTitle>Other Links</HeaderTitle>
           <LinksList>
             <ListItem>
-              <a href="#" />
-              FAQ
+              <a href="#">FAQ</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              Contact Us
+              <a href="#">Contact Us</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              Support
+              <a href="#">Support</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              Privacy Policy
+              <a href="#">Privacy Policy</a>
             </ListItem>
             <ListItem>
-              <a href="#" />
-              Terms & Conditions
+              <a href="#">Terms &amp; Conditions</a>
             </ListItem>
           </LinksList>
         </SectionContainer>
+        <SectionContainer>
+          <HeaderTitle>Call Now</HeaderTitle>
+          <HorizontalContainer>
+            <RedIcon>
+              <FontAwesomeIcon icon={faPhoneAlt} />
+            </RedIcon>
+            <SmallText>+91 555-234-8469</SmallText>
+          </HorizontalContainer>
+        </SectionContainer>
+        <SectionContainer>
+          <HeaderTitle>Mail</HeaderTitle>
+          <HorizontalContainer>
+            <RedIcon>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </RedIcon>
+            <SmallText>info@yourcar.com</SmallText>
+          </HorizontalContainer>
+        </SectionContainer>
       </InnerContainer>
+      <BottomContainer>
+        <CopyrightText>
+          Copyright &copy; {new Date().getFullYear()} Yourcar. All rights
+          reserved.
+        </CopyrightText>
+      </BottomContainer>
     </FooterContainer>
   );
-};
+}
 
 export default Footer;
